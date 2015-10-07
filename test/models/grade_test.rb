@@ -7,7 +7,7 @@ class GradeTest < ActiveSupport::TestCase
 
   test "grade belongs to student" do
     g = Grade.create!(grade: 99)
-    s = Student.create!(name: "Billy")
+    s = Student.create!(name: "Billy", password: "bubblegum")
     g.student_id = s.id
     g.save
     assert_equal s.id, g.reload.student_id
