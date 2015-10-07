@@ -6,18 +6,23 @@ class DashboardController < ApplicationController
 
   def create
     if request.post?
-      u = Teacher.find_by_email(params[:email])
-      if u.authenticate(params[:password])
+      t = Teacher.find_by_email(params[:email])
+      if t.authenticate(params[:password])
         session[:login] = true
-        redirect_to new_teacher_path, notice: "you done it!"
+        redirect_to new_teacher_path, notice: "You did it!"
       else
-        redirect_to root_path, notice: "get outta here!"
+        redirect_to dashboard_new_path, notice: "Go jump off a short ledge."
       end
     end
   end
 
   def destroy
-    session[:login] = false
-    redirect_to root_path
+
   end
+
+  private
+
+    def set_params
+      params.require(:dashboard).permit(:name, :email, :password)
+    end
 end
