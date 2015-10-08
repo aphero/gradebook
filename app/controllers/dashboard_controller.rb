@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
       if t && t.authenticate(params[:password])
         session[:login] = true
         # session[:teacher_id] = t.id
-        redirect_to new_teacher_path, notice: "You have successfully logged in."
+        redirect_to teachers_path, notice: "You have successfully logged in."
       else
         redirect_to dashboard_index_path, notice: "E-mail or password incorrect. Please try again." if session[:login]
       end
@@ -25,6 +25,6 @@ class DashboardController < ApplicationController
   private
 
     def set_params
-      params.require(:dashboard).permit(:name, :email, :password)
+      params.require(:dashboard).permit(:name, :email, :password_digest)
     end
 end

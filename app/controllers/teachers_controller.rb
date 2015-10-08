@@ -8,7 +8,6 @@ class TeachersController < ApplicationController
 
   # GET /teachers/1
   def show
-    @teacher = Teacher.all
   end
 
   # GET /teachers/new
@@ -54,6 +53,6 @@ class TeachersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def teacher_params
-      params.require(:teacher).permit(:name, :email, :password_digest)
+      params.require(:teacher).permit(:name, :email, :password)
     end
 end

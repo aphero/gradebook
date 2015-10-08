@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
-
   resources :parents
   resources :grades
   resources :teachers
   resources :students
 
-  root 'dashboard#index'
-  get 'dashboard/index'
-  post 'dashboard/create'
+  root   'dashboard#index'
+  get    'dashboard/index'
+  post   'dashboard/create'
   delete 'dashboard/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
