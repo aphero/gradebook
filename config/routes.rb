@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
 
+  resources :parents
   resources :grades
   resources :teachers
   resources :students
 
   root 'dashboard#index'
   get 'dashboard/index'
-  post 'dashboard/index'
   post 'dashboard/create'
   delete 'dashboard/destroy'
 

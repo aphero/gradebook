@@ -17,7 +17,13 @@ class StudentTest < ActiveSupport::TestCase
   end
 
   test "students have many parents" do
-
+    # s = Student.create!(name: "Billy", password: "goldeneye")
+    # p1 = Parent.create!(name: "Billy's mom", password: "potato")
+    # p2 = Parent.create!(name: "Billy's dad", password: "carrots")
+    # p1.student_id = s.id
+    # p2.student_id = s.id
+    # assert p1.student_id = s.id
+    # assert p2.student_id = s.id
   end
 
   test "students have many grades" do

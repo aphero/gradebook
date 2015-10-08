@@ -1,5 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Welcome, <%= teacher.name %>!</h2>
+<p>Student list with links to view grades (this will be the same page that students see, but when pressing back will send the user back to this page.)</p>
+<p>What would you like to do today?</p>
+<ul>
+  <li>Create a new teacher.</li>
+  <li>Create a new student.</li>
+  <li>Create a new parent.</li>
+  <li>Grade an assignment.</li>
+</ul>
+
+<h2>Students</h2>
+<p>List of grades</p>
+
+<h2>Parents</h2>
+<p>List of their student's grades</p>
+
+<%= link_to 'Logout', teachers_path %>
+
 <h1>Listing Teachers</h1>
 
 <table>
